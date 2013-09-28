@@ -1,7 +1,7 @@
-<%= link_to 'Edit', edit_person_path(@person), :class => "edit_button" %>
+<% #link_to 'Edit', edit_person_path(@person), :class => "edit_button" %>
 <div style="width:50px;height:63px;border:1px solid red;">
     <%= image_tag('placeholder.png') %>
-    <%= link_to 'Edit', edit_person_path(@person), :class => "pic_edit_button" %>
+    <% # link_to 'Edit', edit_person_path(@person), :class => "pic_edit_button" %>
 </div>
 <p id="notice"><%= notice %></p>
 
@@ -19,7 +19,11 @@
   <div class="profile">
     <div class="profile_cell">Company:</div>
     <div class="profile_cell"><%= @person.company %></div>
-   </div>
+  </div>
+<div class="profile">
+  <div class="profile_cell">Location:</div>
+  <div class="profile_cell"><%= @person.location %></div>
+</div>
   <div class="profile">
       <div class="profile_cell">Keywords</div>
     <div class="profile_cell"><%= @person.keywords %></div>

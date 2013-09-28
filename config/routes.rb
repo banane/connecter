@@ -5,6 +5,7 @@ Women2::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :people
+      resources :login
     end
   end
   resources :people
@@ -12,6 +13,7 @@ Women2::Application.routes.draw do
     post :create
     get :index
   end
+  resources :login
 
   root :to => "people#index"
 
