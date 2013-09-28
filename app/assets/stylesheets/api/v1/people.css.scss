@@ -1,0 +1,75 @@
+body {
+  font-family:arial;
+}
+
+a {
+  text-decoration:none;
+}
+
+#search_bar {
+  width:100%;height:100px;
+}
+
+table#attending {
+  width:100%;
+}
+
+.profile {
+  width:100%;
+  height:80px;
+  float:left;
+  margin-bottom:10px;
+}
+.profile_cell {
+  border:1px solid #aaa;
+  padding:5px;
+  float:left;
+  width:180px;
+  height:60px;
+}
+
+.label {
+  width:100px;
+}
+
+table#attending td {
+  border-bottom:1px solid gray;height:60px;
+  width:100%;
+}
+
+.attending_row {
+  float:left;padding-top:10px;
+  height:60px;
+  min-width:180px;
+}
+
+.follow_button, .edit_button, .pic_edit_button, input[type="submit"] .done_button {
+  background-color:#aaa;
+  color:white;
+  font-style:bold;
+  padding:3px 10px;
+  margin:20px 20px 0px 0px;
+  float:right;
+}
+
+input[type="submit"]{
+  background-color: #aaa;
+  color: white;
+  border: none;
+  padding: 3px 10px;
+  align: right;
+  float: right;
+
+}
+
+.edit_button {
+  float:right;
+  align:top;
+}
+.pic_edit_button {
+  margin:3px 3px 15px 4px;
+}
+
+.attending_pic {
+  float:left;margin:5px;padding:5px;height:60px; position:relative;
+}

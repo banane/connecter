@@ -1,4 +1,5 @@
 <%= form_for(@person) do |f| %>
+<%= f.submit :value => "Done"%>
   <% if @person.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
@@ -11,35 +12,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+  <div class="profile">
+   <div class="profile_cell label">Name</div>
+   <div class="profile_cell"> <%= f.text_field :first_name %>
+   <%= f.text_field :last_name %></div>
+  </div>
+  <div class="profile">
+    <div class="profile_cell label">Position</div>
+    <div class="profile_cell"><%= f.text_field :role %></div>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <div class="profile_cell label"><%= f.label :company %></div>
+    <div class="profile_cell"><%= f.text_field :company %></div>
   </div>
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
-  <div class="field">
-    <%= f.label :member %><br />
-    <%= f.check_box :member %>
-  </div>
-  <div class="field">
-    <%= f.label :attending %><br />
-    <%= f.check_box :attending %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="profile">
+      <div class="profile_cell label">
+      Keywords</div>
+      <div class="profile_cell">
+        <%= f.text_area :keywords, cols: 20, rows: 3 %>
+      </div>
+    </div>
+
 <% end %>

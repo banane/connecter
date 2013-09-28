@@ -3,7 +3,7 @@ module Api
     class PeopleController < ApplicationController
       respond_to :json, :html
       def index
-        @people = Person.all
+        @people = Person.where(:attending => true)
         respond_with @people
       end
 

@@ -1,5 +1,29 @@
-<ul>
+<div id="search_bar">
+<form method="post" action="search#show">
+  <input type="text" name="keywords" length=20>
+  <input type="hidden" name="attending" value="1">
+  <input type="submit" value="Search">
+</form>
+<table width="100%" style="align:center;" id="attending">
+</div>
 <% @people.each do |person| %>
-<li><%= person.first_name %> <%= person.last_name%> </li>
-<% end %>
-</ul>
+  <tr>
+  <td>
+    <div class="attending_pic"><%= link_to image_tag("placeholder.png"),
+            person %></div>
+    <div class="attending_row">
+        <strong><%= link_to person.first_name + " " +  person.last_name, person %></strong><br />
+         <br />
+        <%= link_to person.role, person %><br />
+        <%= link_to person.company, person %>
+    </div>
+
+      <%= link_to "Follow", root_url, :class => "follow_button"%>
+    </td>
+   <% end %>
+
+  </tr>
+</table>
+
+<br />
+
