@@ -1,6 +1,6 @@
 module Api
   module V1
-    class PeopleController < ApplicationController
+    class PeopleController < BaseController
       respond_to :json, :html
       def index
         @people = Person.where(:attending => true)
