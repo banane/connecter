@@ -14,6 +14,9 @@ module Api
 
           end
       end
+      def index
+
+      end
     end
   end
 end

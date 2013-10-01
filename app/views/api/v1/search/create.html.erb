@@ -1,0 +1,7 @@
+<ul>
+  <% @search.results.each do |person| %>
+      <li>Name; <%= person.first_name %> <%= person.last_name %><br />
+        Position/Company: <%= person.role %> <%= person.company %><br />
+        Keywords: <%= person.keywords %>
+  <% end %>
+</ul>
