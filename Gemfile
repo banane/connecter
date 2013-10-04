@@ -20,6 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'mysql2', '0.3.11'
 
 # Use unicorn as the web server
 # gem 'unicorn'
