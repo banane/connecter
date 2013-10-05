@@ -1,5 +1,4 @@
 /*
-*= require scaffold.css
 *= require_self
 */
-@import "scaffold.css.scss";
+@import "scaffolds.css.scss";
