@@ -1,3 +1,9 @@
+routes.txt
+.DS_Store
+.idea
+solr/data/
+public/assets
+config/database.yml
 .bundle
 db/*.sqlite3
 log/*.log
