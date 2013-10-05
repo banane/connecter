@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928192021) do
+ActiveRecord::Schema.define(:version => 20131004205908) do
+
+  create_table "followed_people", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "followed_person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", :force => true do |t|
     t.string   "first_name"
@@ -33,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130928192021) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

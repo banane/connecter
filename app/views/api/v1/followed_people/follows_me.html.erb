@@ -1,0 +1,13 @@
+<h2>Follows Me</h2>
+<table width="100%" style="align:center;" id="attending">
+  <% if @followsme.present? %>
+      <% @followsme.each do |follow| %>
+          <% if follow.person.attending %>
+              <%= render partial: "api/v1/shared/people_list", :locals => { :person => follow.person } %>
+          <% end %>
+      <% end %>
+  <% end %>
+  </tr>
+</table>
+
+<br />

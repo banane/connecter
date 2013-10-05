@@ -6,13 +6,18 @@ Women2::Application.routes.draw do
     namespace :v1 do
       resources :people
       resources :logins
-    end
+      resources :followed_people do
+        collection do
+          get :follows_me
+        end
+      end
+      resources :search do
+        post :create
+        get :index
+      end
+      end
   end
-  resources :people
-  resources :search do
-    post :create
-    get :index
-  end
+
 
   root :to => "people#index"
 

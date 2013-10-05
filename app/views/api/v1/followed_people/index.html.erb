@@ -1,0 +1,12 @@
+<h2>Following</h2>
+<table width="100%" style="align:center;" id="attending">
+  <% @follows.each do |follow| %>
+    <% if follow.followed_person.attending %>
+        <%= render partial: "api/v1/shared/people_list", :locals => { :person => follow.followed_person } %>
+    <% end %>
+  <% end %>
+  </tr>
+</table>
+
+<br />
+
