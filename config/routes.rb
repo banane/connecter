@@ -4,13 +4,13 @@ Women2::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   namespace :api do
     namespace :v1 do
-      resources :people
-      resources :logins
       resources :followed_people do
         collection do
           get :follows_me
         end
       end
+      resources :logins
+      resources :people
       resources :search do
         post :create
         get :index
@@ -19,6 +19,6 @@ Women2::Application.routes.draw do
   end
 
 
-  root :to => "people#index"
+  root :to => "api/v1/people#index"
 
 end
