@@ -1,5 +1,6 @@
 Women2::Application.routes.draw do
   devise_for :users
+  resources :user
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   namespace :api do
@@ -19,6 +20,6 @@ Women2::Application.routes.draw do
   end
 
 
-  root :to => "api/v1/people#index"
+  root :to => "api/v1/logins#index"
 
 end
