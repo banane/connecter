@@ -8,7 +8,8 @@ module Api
       end
 
       def show
-        respond_with Person.find(params[:id])
+        @person = Person.find(params[:id])
+        respond_with @person
       end
 
       def create
