@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131004205908) do
+ActiveRecord::Schema.define(:version => 20131006003952) do
 
   create_table "followed_people", :force => true do |t|
     t.integer  "person_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20131004205908) do
     t.datetime "updated_at"
     t.text     "keywords"
     t.string   "location"
+    t.string   "profile_photo"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

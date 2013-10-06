@@ -1,6 +1,8 @@
 <tr>
   <td>
-    <div class="attending_pic"><%= link_to image_tag("placeholder.png"), api_v1_person_path(person) %></div>
+    <div class="attending_pic">
+       <%= link_to image_tag(person.get_image), api_v1_person_path(person) %>
+    </div>
     <div class="attending_row">
       <strong><%= link_to person.first_name + " " +  person.last_name, api_v1_person_path(person)%></strong><br />
       <br />
@@ -10,7 +12,7 @@
     <% unless current_user.id.eql?(person.id) %>
         <% if current_user.is_following person.id %>
             <% relationship = current_user.followed_people.where(:followed_person_id=>person.id).first %>
-            <%= button_to "delete", {:controller => :followed_people,
+            <%= button_to "Un-Follow", {:controller => :followed_people,
                                      :action => 'destroy', :id => relationship.id }, :method => :delete %>
         <% else %>
             <%=  button_to "Follow", api_v1_followed_people_path(:person_id => person), :method => :post %>

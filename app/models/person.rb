@@ -12,4 +12,12 @@ class Person < ActiveRecord::Base
     self.followed_people.where(:followed_person_id => person_id).size > 0
   end
 
+  def get_image
+    if self.profile_photo.present?
+      self.profile_photo
+    else
+      "placeholder.png"
+    end
+  end
+
 end
