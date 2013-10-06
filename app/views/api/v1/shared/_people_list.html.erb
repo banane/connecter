@@ -10,9 +10,10 @@
     <% unless current_user.id.eql?(person.id) %>
         <% if current_user.is_following person.id %>
             <% relationship = current_user.followed_people.where(:followed_person_id=>person.id).first %>
-            <%= link_to "Followed", api_v1_followed_person_path(relationship), :method => :delete %>
+            <%= button_to "delete", {:controller => :followed_people,
+                                     :action => 'destroy', :id => relationship.id }, :method => :delete %>
         <% else %>
-            <%=  link_to "Follow", api_v1_followed_people_path(:person_id => person), :method => :post %>
+            <%=  button_to "Follow", api_v1_followed_people_path(:person_id => person), :method => :post %>
         <% end %>
         </td>
     <% end %>
