@@ -17,12 +17,22 @@ module Api
       end
 
       def update
-        respond_with Person.update(params[:id], params[:person])
+        Person.update(params[:id], params[:person])
+        @person = Person.find(params[:id])
+        flash[:notice] = "Profile successfully updated" if @person.valid?
+        respond_with(@person) do |format|
+          format.html { redirect_to edit_api_v1_person_path }
+        end
       end
 
       def index_follows_me
         @followsme = FollowedPerson.where(:followed_person_id => current_user.id)
         respond_with @followsme
+      end
+
+      def edit
+        @person = Person.find(params[:id])
+        respond_with @person
       end
 
     end
