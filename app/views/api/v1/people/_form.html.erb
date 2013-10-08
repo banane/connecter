@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -31,6 +32,10 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+    <div class="field">
+      <%= f.label :keywords, :placeholder=>"ecommerce social media investing startups" %><br />
+      <%= f.text_field :keywords %>
+    </div>
   <div class="actions">
     <%= f.submit "Save" %>
   </div>

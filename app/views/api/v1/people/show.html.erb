@@ -1,30 +1,36 @@
-<- <%= link_to 'Back', api_v1_people_path %>
+<div id="profile_detail">
+    <div id="profile_subhead">
+        <div id="left"><- <%= link_to 'Back', api_v1_people_path %></div>
+        <div id="right"><%= @person.first_name%> <%= @person.last_name%></div>
+    </div>
 
+    <%= image_tag @person.get_image %>
+    <p>
+      <b>Last name:</b>
+      <%= @person.last_name %>
+    </p>
 
-<p id="notice"><%= notice %></p>
+    <p>
+      <b>Role:</b>
+      <%= @person.role %>
+    </p>
 
-<p>
-  <b>First name:</b>
-  <%= @person.first_name %>
-</p>
+    <p>
+      <b>Company:</b>
+      <%= @person.company %>
+    </p>
 
-<p>
-  <b>Last name:</b>
-  <%= @person.last_name %>
-</p>
+    <p>
+      <b>Email:</b>
+      <a href="mailto://<%= @person.email%>"><%= @person.email%></a>
+    </p>
 
-<p>
-  <b>Role:</b>
-  <%= @person.role %>
-</p>
+  <p>
+    <b>Looking For:</b>
+  </p>
 
-<p>
-  <b>Company:</b>
-  <%= @person.company %>
-</p>
+  <p>
+    <b>Personal Keywords:</b>
+    <%= @person.keywords %>
 
-<p>
-  <b>Email:</b>
-  <%= @person.email %>
-</p>
-
+</div>
