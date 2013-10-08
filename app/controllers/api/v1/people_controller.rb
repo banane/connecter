@@ -3,7 +3,7 @@ module Api
     class PeopleController < BaseController
       respond_to :json, :html
       def index
-        @people = People.attending
+        @people = Person.attending.reject{ |p| p.id.eql?(current_user.id) } # only have current user in controller
         @page = :attending
         respond_with @people
       end
