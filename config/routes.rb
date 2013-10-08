@@ -16,9 +16,8 @@ Women2::Application.routes.draw do
         post :create
         get :index
       end
-      end
+    end
   end
-
 
   root :to => "api/v1/logins#index"
 

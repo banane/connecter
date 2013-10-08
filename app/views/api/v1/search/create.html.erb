@@ -1,7 +1,7 @@
-<ul>
+<table width="100%" style="align:center;" id="attending">
   <% @search.results.each do |person| %>
-      <li>Name; <%= person.first_name %> <%= person.last_name %><br />
-        Position/Company: <%= person.role %> <%= person.company %><br />
-        Keywords: <%= person.keywords %>
+      <%=  render partial: "api/v1/shared/people_list", :locals => { :person => person } %>
   <% end %>
-</ul>
+</table>
+
+<br />

@@ -1,0 +1,8 @@
+<table width="100%" style="align:center;" id="attending">
+  <% @people.each do |person| %>
+      <%= render partial: "api/v1/shared/people_list", :locals => { :person => person } %>
+  <% end %>
+</table>
+
+<br />
+
