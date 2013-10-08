@@ -20,10 +20,12 @@ class Api::V1::FollowedPeopleController < ApplicationController
   end
 
   def index
+    @page = :following
     @follows = FollowedPerson.where(:person_id => current_user.id).includes(:person)
   end
 
   def follows_me
+    @page = :followers
     @followsme = FollowedPerson.where(:followed_person_id => current_user.id).includes(:person)
   end
 end

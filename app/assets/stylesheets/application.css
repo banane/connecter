@@ -2,3 +2,130 @@
 *= require_self
 */
 @import "scaffolds.css.scss";
+
+#subhead {
+    width:100%;
+}
+#subhead a.selected {
+    background-color:#ccc;
+}
+#subhead a {
+    text-align:center;
+    text-decoration:none;
+    display:inline;
+    float:left;
+   /* width:79px;*/
+    width:26%;
+    height:15px;
+    border:1px solid #b6b6b6;
+    padding:12px 10px;
+    margin:0px;
+
+}
+
+body {
+    font-family:helvetica, arial;
+}
+
+a {
+    text-decoration:none;
+}
+
+#search_bar {
+    width:100%;
+    height:30px;
+}
+
+
+table#attending {
+    width:100%;
+}
+
+.profile {
+    width:100%;
+    height:80px;
+    float:left;
+    margin-bottom:10px;
+}
+.profile_cell {
+    border:1px solid #aaa;
+    padding:5px;
+    float:left;
+    width:170px;
+    height:60px;
+}
+
+.label {
+    width:100px;
+}
+
+table#attending td {
+    border-bottom:1px solid gray;height:60px;
+    width:100%;
+    height:130px;
+}
+
+.attending_row {
+    float:left;padding-top:10px;
+    height:60px;
+    min-width:170px;
+}
+
+
+a:active {
+    color:white;
+}
+
+a:visited {
+    color:black;
+}
+
+.follow_button, .edit_button, .pic_edit_button, input[type="submit"], .done_button {
+    background-color:#aaa;
+    color:white;
+    font-style:bold;
+    padding:3px 10px;
+    margin:20px 5px 0px 0px;
+    float:right;
+    text-transform:uppercase;
+}
+a.button:visited {
+    color:white;
+}
+
+input[type="submit"]{
+    text-transform:uppercase;
+    background-color: #aaa;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    margin-right:5px;
+    align: right;
+    float: right;
+
+}
+input[type="submit"].search {
+    margin-top:2px;
+}
+
+.edit_button {
+    float:right;
+    align:top;
+}
+.pic_edit_button {
+    margin:3px 3px 15px 4px;
+}
+
+.attending_pic {
+    float:left;
+    /* margin:5px; */
+    /*  padding:5px;*/
+    position:relative;
+    margin-right:10px;
+}
+
+.attending_pic img {
+    max-width:100px;
+    max-height:100px;
+}
+

@@ -1,0 +1,6 @@
+<div id="subhead">
+  <a class="<% if @page.eql?(:attending)%>selected <% end %>" href="<%= api_v1_people_path%>">Attending</a>
+  <a class="<% if @page.eql?(:following)%>selected <% end %>" href="<%= api_v1_followed_people_path%>">Following</a>
+  <a class="<% if @page.eql?(:followers)%>selected <% end %>" href="<%=
+  follows_me_api_v1_followed_people_path%>">Followers</a>
+</div>

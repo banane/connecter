@@ -3,7 +3,8 @@ module Api
     class PeopleController < BaseController
       respond_to :json, :html
       def index
-        @people = Person.where(:attending => true).includes(:followed_people)
+        @people = People.attending
+        @page = :attending
         respond_with @people
       end
 
@@ -26,6 +27,7 @@ module Api
       end
 
       def index_follows_me
+        @page = :followers
         @followsme = FollowedPerson.where(:followed_person_id => current_user.id)
         respond_with @followsme
       end

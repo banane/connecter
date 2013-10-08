@@ -1,3 +1,6 @@
+<- <%= link_to 'Back', api_v1_people_path %>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -21,20 +24,7 @@
 </p>
 
 <p>
-  <b>Member:</b>
-  <%= @person.member %>
-</p>
-
-<p>
-  <b>Attending:</b>
-  <%= @person.attending %>
-</p>
-
-<p>
   <b>Email:</b>
   <%= @person.email %>
 </p>
 
-
-<%= link_to 'Edit', edit_api_v1_person_path(@person) %> |
-<%= link_to 'Back', api_v1_people_path %>

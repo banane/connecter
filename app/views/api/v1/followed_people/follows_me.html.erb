@@ -1,4 +1,4 @@
-<h2>Follows Me</h2>
+<%= render :partial => "api/v1/shared/subhead", :locals => { :page => @page } %>
 <table width="100%" style="align:center;" id="attending">
   <% if @followsme.present? %>
       <% @followsme.each do |follow| %>

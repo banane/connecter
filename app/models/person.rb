@@ -4,6 +4,8 @@ class Person < ActiveRecord::Base
   has_many :inverse_followed_people, :class_name => "FollowedPeople", :foreign_key => "person_id"
   has_many :inverse_followed_people, :through => :inverse_followed_people, :source => :person
 
+  scope :attending, -> { where("attending = 'true' and id != ?", current_user.id).includes(:followed_people) }
+
   searchable do
     text :keywords, :company, :role, :last_name, :email
   end
