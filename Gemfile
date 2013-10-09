@@ -11,8 +11,6 @@ gem "sunspot", "~> 2.0.0"
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
@@ -22,17 +20,13 @@ end
 gem 'jquery-rails'
 gem 'mysql2', '0.3.11'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :development,:test do
+  gem 'rspec-rails', '~> 2.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
+end
 
 group :test do
-  # Pretty printed test output
   gem 'turn', :require => false
 end
 

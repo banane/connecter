@@ -165,3 +165,17 @@ input[type="submit"].search {
 #search_form input[type=text]{
     width:70%;
 }
+
+.edit_person input[type=submit]{
+    margin-left:-10px;
+   position:relative;
+   display:block;
+   float:left;
+   width:90%;
+   height:30px;
+   background-color:#E53868;
+   color:#fff;
+   margin:3px 40px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
