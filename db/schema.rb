@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131006003952) do
+ActiveRecord::Schema.define(:version => 20131009020333) do
 
   create_table "followed_people", :force => true do |t|
     t.integer  "person_id"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(:version => 20131006003952) do
     t.string   "company"
     t.boolean  "member"
     t.boolean  "attending"
-    t.string   "email"
+    t.string   "email",         :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "keywords"
     t.string   "location"
     t.string   "profile_photo"
+    t.string   "looking_for"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -47,6 +48,10 @@ ActiveRecord::Schema.define(:version => 20131006003952) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "testtmp", :id => false, :force => true do |t|
+    t.string "url"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
