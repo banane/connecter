@@ -29,7 +29,6 @@ describe Person do
     end
 
     it " true" do
-      debugger
       person.is_following(follower.id).should be_true
     end
     it " false" do

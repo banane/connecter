@@ -7,11 +7,10 @@ module Api
 
           person = Person.where(:email => params[:email]).first
           if person.present?
-            # Save the user ID in the session so it can be used in
-            # subsequent requests
             session[:current_user_id] = person.id
             successful_login(person)
-
+          else
+            api_invalid_login
           end
       end
       def index
