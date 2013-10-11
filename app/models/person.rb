@@ -1,4 +1,16 @@
 class Person < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  devise :token_authenticatable,
+  #:confirmable,
+         :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  # :lockable, :timeoutable and :omniauthable
+
+#  before_save :ensure_authentication_token
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+
   has_many :followed_people
   has_many :people, :through => :followed_people
   has_many :inverse_followed_people, :class_name => "FollowedPeople", :foreign_key => "person_id"
@@ -6,7 +18,7 @@ class Person < ActiveRecord::Base
 
   validates_presence_of :email
 
-  scope :attending, -> { where(:attending => 1).includes(:followed_people) }
+  scope :attending, -> { where(:attending => 1).includes(:followed_people)}
 
   searchable do
     text :keywords, :company, :role, :last_name, :email
@@ -23,5 +35,7 @@ class Person < ActiveRecord::Base
       "placeholder.png"
     end
   end
+
+
 
 end

@@ -4,14 +4,7 @@ module Api
       respond_to :json
 
       def create
-
-          person = Person.where(:email => params[:email]).first
-          if person.present?
-            session[:current_user_id] = person.id
-            successful_login(person)
-          else
-            api_invalid_login
-          end
+        redirect_to api_v1_tokens_create(params)
       end
       def index
 

@@ -3,7 +3,7 @@ module Api
     class BaseController < ApplicationController
       respond_to :json, :html
 
-      skip_before_filter :verify_authenticity_token
+#      skip_before_filter :verify_authenticity_token
 
 
       def error!(http_status_code, error_hash)
@@ -33,7 +33,8 @@ module Api
         render :json => {
             :success    => true,
             :person     => person,
-            :status     => 200
+            :status     => 200,
+            :auth_token => person.authentication_token
         }
       end
 

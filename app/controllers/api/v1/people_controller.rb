@@ -1,8 +1,11 @@
 module Api
   module V1
     class PeopleController < BaseController
+      before_filter :verify_authenticity_token
       respond_to :json, :html
+
       def index
+
         @people = Person.attending.reject{ |p| p.id.eql?(current_user.id) } # only have current user in controller
         @page = :attending
         respond_with @people
@@ -36,6 +39,8 @@ module Api
         @person = Person.find(params[:id])
         respond_with @person
       end
+
+
 
     end
   end

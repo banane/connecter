@@ -1,6 +1,8 @@
 require "spec_helper"
 
 describe Api::V1::LoginsController do
+  let(:person) { FactoryGirl.create(:person) }
+
   context "index" do
     it "get" do
       get :index
@@ -9,7 +11,6 @@ describe Api::V1::LoginsController do
     end
   end
   context "create" do
-    let(:person) { FactoryGirl.create(:person) }
 
     it "attending" do
       post :create, { :email => person.email, :format => :json }
@@ -21,6 +22,8 @@ describe Api::V1::LoginsController do
       resp["success"].should eql(true)
 
       response.should be_success
+
+      lambda { sign_in person }.should change { current_user }.from(nil).to(person)
     end
     it "not attending" do
       post :create, { :email => Faker::Internet.email, :format => :json }

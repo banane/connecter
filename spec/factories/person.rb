@@ -7,6 +7,5 @@ FactoryGirl.define do
     last_name Faker::Name.last_name
     keywords Faker::Lorem.words(3)
     company Faker::Lorem.words(2)
-
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131009020333) do
+ActiveRecord::Schema.define(:version => 20131010211015) do
 
   create_table "followed_people", :force => true do |t|
     t.integer  "person_id"
@@ -21,20 +21,34 @@ ActiveRecord::Schema.define(:version => 20131009020333) do
   end
 
   create_table "people", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "role"
-    t.string   "company"
-    t.boolean  "member"
-    t.boolean  "attending"
-    t.string   "email",         :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "first_name",             :default => ""
+    t.string   "last_name",              :default => ""
+    t.string   "role",                   :default => ""
+    t.string   "company",                :default => ""
+    t.boolean  "member",                 :default => false
+    t.boolean  "attending",              :default => false
+    t.string   "email",                  :default => "",    :null => false
     t.text     "keywords"
     t.string   "location"
+    t.text     "looking_for"
     t.string   "profile_photo"
-    t.string   "looking_for"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
   end
+
+  add_index "people", ["authentication_token"], :name => "index_people_on_authentication_token", :unique => true
+  add_index "people", ["email"], :name => "index_people_on_email", :unique => true
+  add_index "people", ["reset_password_token"], :name => "index_people_on_reset_password_token", :unique => true
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -48,27 +62,5 @@ ActiveRecord::Schema.define(:version => 20131009020333) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
-  create_table "testtmp", :id => false, :force => true do |t|
-    t.string "url"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
