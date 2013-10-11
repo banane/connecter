@@ -10,8 +10,9 @@
       </ul>
     </div>
   <% end %>
-
-
+    <div>
+      <%= f.submit "Save" %>
+    </div>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -28,15 +29,25 @@
     <%= f.label :company %><br />
     <%= f.text_field :company %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label :location %><br />
+      <%= f.text_field :location %>
+    </div>
+
     <div class="field">
       <%= f.label :keywords, :placeholder=>"ecommerce social media investing startups" %><br />
       <%= f.text_field :keywords %>
     </div>
-  <div>
+    <div class="field">
+      <%= f.label :looking_for, :placeholder=>"ecommerce social media investing startups" %><br />
+      <%= f.text_field :looking_for %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div>
     <%= f.submit "Save" %>
   </div>
 <% end %>
