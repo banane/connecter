@@ -1,6 +1,7 @@
 <div id="profile_detail">
     <div id="profile_subhead">
-        <div id="left"><- <%= link_to 'Back', api_v1_people_path %></div>
+        <div id="left"><- <%= link_to 'Back', api_v1_people_path(:auth_token => @current_user.authentication_token)
+        %></div>
         <div id="right"><%= @person.first_name%> <%= @person.last_name%></div>
     </div>
 

@@ -1,13 +1,17 @@
 <tr>
   <td>
     <div class="attending_pic">
-       <%= link_to image_tag(person.get_image), api_v1_person_path(person) %>
+       <%= link_to image_tag(person.get_image), api_v1_person_path(person,
+                                                                   :auth_token=>current_user.authentication_token) %>
     </div>
     <div class="attending_row">
-      <strong><%= link_to person.first_name + " " +  person.last_name, api_v1_person_path(person)%></strong><br />
+      <strong><%= link_to person.first_name + " " +  person.last_name, api_v1_person_path(person,
+      :auth_token=>current_user.authentication_token)%></strong><br />
       <br />
-      <%= link_to person.role, api_v1_person_path(person) %><br />
-      <%= link_to person.company, api_v1_person_path(person) %>
+      <%= link_to person.role, api_v1_person_path(person,
+                                                  :auth_token=>current_user.authentication_token) %><br />
+      <%= link_to person.company, api_v1_person_path(person,
+                                                     :auth_token=>current_user.authentication_token) %>
     </div>
     <% unless current_user.id.eql?(person.id) %>
         <% if current_user.is_following person.id %>
