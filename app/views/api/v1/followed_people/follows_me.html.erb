@@ -1,13 +1,13 @@
 <%= render :partial => "api/v1/shared/subhead", :locals => { :page => @page } %>
 <table width="100%" style="align:center;" id="attending">
   <% if @followsme.present? %>
+    <table style="align:center;border-spacing:0px;" class="people_list">
       <% @followsme.each do |follow| %>
           <% if follow.person.attending %>
-              <%= render partial: "api/v1/shared/people_list", :locals => { :person => follow.person } %>
+              <%= render partial: "api/v1/shared/people_list", :locals => { :person => follow.person, :current_user => @current_user } %>
           <% end %>
       <% end %>
+    </table>
   <% end %>
   </tr>
 </table>
-
-<br />
