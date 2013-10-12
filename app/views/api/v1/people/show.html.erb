@@ -4,8 +4,13 @@
         %></div>
         <div id="right"><%= @person.first_name%> <%= @person.last_name%></div>
     </div>
-
-    <%= image_tag @person.get_image %>
+    <% if @person.profile_photo.present? %>
+        <%= image_tag @person.profile_photo %>
+    <% end %>
+  <p>
+    <b>First name:</b>
+    <%= @person.first_name %>
+  </p>
     <p>
       <b>Last name:</b>
       <%= @person.last_name %>
@@ -21,13 +26,19 @@
       <%= @person.company %>
     </p>
 
-    <p>
+  <p>
+    <b>Location:</b>
+    <%= @person.location %>
+  </p>
+      <% if @person.contact_permission? %>
+      <p>
       <b>Email:</b>
-      <a href="mailto://<%= @person.email%>"><%= @person.email%></a>
+      <%= mail_to @person.email, @person.email %>
     </p>
-
+    <% end %>
   <p>
     <b>Looking For:</b>
+    <%= @person.looking_for %>
   </p>
 
   <p>

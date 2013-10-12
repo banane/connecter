@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010211015) do
+ActiveRecord::Schema.define(:version => 20131012011003) do
 
   create_table "followed_people", :force => true do |t|
     t.integer  "person_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20131010211015) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
+    t.boolean  "contact_permission",     :default => true
   end
 
   add_index "people", ["authentication_token"], :name => "index_people_on_authentication_token", :unique => true
@@ -64,3 +65,5 @@ ActiveRecord::Schema.define(:version => 20131010211015) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
 end
+
+sample = Person.new(:email=>"test@banane.com", :password => "111111111", :password_confirmation=>"111111111")

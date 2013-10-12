@@ -16,7 +16,8 @@
 
 <% @people.each do |person| %>
   <tr>
-    <td><%= person.first_name %></td>
+    <td style="font-style:bold;"><%= person.first_name %></td>
+    <td><%= person.get_image %></td>
     <td><%= person.last_name %></td>
     <td><%= person.role %></td>
     <td><%= person.company %></td>

@@ -1,5 +1,6 @@
 <%= render :partial => "api/v1/shared/subhead", :locals => { :page => @page } %>
-<table width="100%" style="align:center;" id="attending">
+<div id="member_ad"><a href="">LEARN MORE ABOUT MEMBERSHIP PERKS ></a></div>
+<table width="100%" style="align:center;border-spacing:0px;" id="attending">
 <% @people.each do |person| %>
     <%= render partial: "api/v1/shared/people_list", :locals => { :person => person,
     :current_user => @current_user } %>

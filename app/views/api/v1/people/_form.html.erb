@@ -13,41 +13,50 @@
     <div>
       <%= f.submit "Save" %>
     </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
-    <div class="field">
-      <%= f.label :location %><br />
-      <%= f.text_field :location %>
-    </div>
+    <table id="edit_person">
+    <tr><td>
+        <%= f.label :first_name %></td>
+       <td>
+        <%= f.text_field :first_name %>
+       </td>
+    </tr>
+    <tr>
+        <td><%= f.label :last_name %></td>
+        <td><%= f.text_field :last_name %></td>
+    </tr>
+    <tr>
+        <td><%= f.label :role %></td>
+        <td><%= f.text_field :role %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :company %></td>
+      <td><%= f.text_field :company %></td>
+     </tr>
+    <tr>
+      <td><%= f.label :location %></td>
+      <td><%= f.text_field :location %></td>
+    </tr>
+      <tr>
 
-    <div class="field">
-      <%= f.label :keywords, :placeholder=>"ecommerce social media investing startups" %><br />
-      <%= f.text_field :keywords %>
-    </div>
-    <div class="field">
-      <%= f.label :looking_for, :placeholder=>"ecommerce social media investing startups" %><br />
-      <%= f.text_field :looking_for %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
+      <td><%= f.label :keywords, "Personal tags",  :placeholder=>"ecommerce social media investing startups" %></td>
+      <td><%= f.text_field :keywords %></td>
+      </tr>
+      <tr>
 
-    <div>
-    <%= f.submit "Save" %>
-  </div>
+      <td><%= f.label :looking_for, :placeholder=>"ecommerce social media investing startups" %></td>
+      <td><%= f.text_field :looking_for %></td>
+      </tr>
+      <tr>
+
+      <td><%= f.label :email %></td>
+      <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+
+      <td><%= f.label :contact_permission, "Let attendees contact me." %>
+      <td><%= f.check_box :contact_permission %>
+      </tr>
+      </table>
+
+      <%= f.submit "Save" %>
 <% end %>
