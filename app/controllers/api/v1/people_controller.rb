@@ -29,7 +29,7 @@ module Api
         @person = Person.find(params[:id])
         flash[:notice] = "Profile successfully updated" if @person.valid?
         respond_with(@person) do |format|
-          format.html { redirect_to edit_api_v1_person_path, :auth_token => @person.authentication_token }
+          format.html { redirect_to edit_api_v1_person_path(:id => @person.id, :auth_token => @person.authentication_token) }
         end
       end
 
