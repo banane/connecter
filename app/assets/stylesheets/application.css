@@ -1,7 +1,6 @@
 /*
 *= require_self
 */
-@import "scaffolds.css.scss";
 
 #subhead {
     width:100%;
@@ -328,3 +327,4 @@ table#edit_person {
 
 /*  line-height:22px;*/
 }
+

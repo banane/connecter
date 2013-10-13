@@ -82,6 +82,7 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    libv8 (3.11.8.13)
     mail (2.3.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -141,6 +142,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.2)
     remotipart (1.2.1)
     rsolr (1.0.9)
       builder (>= 2.1.2)
@@ -176,6 +178,9 @@ GEM
     sunspot_solr (2.0.0)
     sunspot_test (0.4.0)
       sunspot_rails (>= 1.2.1)
+    therubyracer (0.11.3)
+      libv8 (~> 3.11.8.12)
+      ref
     thor (0.14.6)
     tilt (1.3.7)
     treetop (1.4.12)
@@ -210,5 +215,6 @@ DEPENDENCIES
   sunspot_rails
   sunspot_solr
   sunspot_test
+  therubyracer
   turn
   uglifier
