@@ -13,7 +13,7 @@
     text-decoration:none;
     display:inline;
     float:left;
-   /* width:79px;*/
+    /* width:79px;*/
     width:27%;
     height:18px;
     border:1px solid #b6b6b6;
@@ -31,6 +31,7 @@ body {
     margin-left:0px;
     margin-right:0px;
     margin-top:10px;
+    font-size:12px;
 }
 
 a {
@@ -65,12 +66,85 @@ table#attending {
     width:100px;
 }
 
+/**********************             edit profile */
+
+
+#edit_profile {
+    width:100%;
+    margin:-10px 20px 3px 3px;
+}
+
+
+#edit_profile h1 {
+  font-size:14px;
+  line-height:16px;
+  padding-bottom:0px;
+  margin-bottom:0px;
+}
+
+#edit_profile #head_info {
+    float:left;
+    position:relative;
+    font-size:12px;
+    width:70%;
+    height:65px;
+}
+#edit_profile img {
+    height:60px;
+    width:60px;
+    padding-right:5px;
+    padding-left:4px;
+    float:left;
+    position:relative;
+}
+
+#edit_profile #head {
+  height:65px;
+}
+
+#edit_profile #note {
+    width:100%;
+    display:block;
+    position:relative;
+    float:left;
+    font-style:italic;"
+    font-size:11px;
+    padding-left:4px;
+}
+
+.edit_person input[type=submit]{
+    margin-left:-10px;
+    position:relative;
+    display:block;
+    float:left;
+    width:97%;
+    height:30px;
+    background-color:#E53868;
+    color:#fff;
+    margin:3px 3px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+table#edit_person {
+    width:100%;
+}
+
+#edit_person input[type=text] {
+    width:95%;
+    height:20px;
+}
+
+#edit_person td {
+    min-width:100px;
+}
+
 /**********************             people list styles */
 
 table.people_list {
-  cell-spacing:0px;
-  border-spacing:0px;
-  border-collapse:collapse;
+    cell-spacing:0px;
+    border-spacing:0px;
+    border-collapse:collapse;
 }
 table.people_list td {
     border-bottom:1px solid #ccc;
@@ -182,11 +256,11 @@ input[type="submit"].search {
 /********************           profile detail */
 
 #profile_detail {
-  margin-top:-10px;
+    margin-top:-10px;
 }
 
 #profile_detail img {              /* viewing detail */
-  width:100%;
+    width:100%;
 }
 
 #profile_subhead {
@@ -226,10 +300,10 @@ input[type="submit"].search {
 }
 
 #profile_detail_left {
-   width:18%;
-   position:relative;
-   float:left;
-   height:22px;
+    width:18%;
+    position:relative;
+    float:left;
+    height:22px;
 }
 
 #profile_detail_left #arrow {
@@ -254,8 +328,8 @@ input[type="submit"].search {
 }
 
 #profile_detail p {
-  padding-bottom:5px;
-  border-bottom:1px solid #ccc;
+    padding-bottom:5px;
+    border-bottom:1px solid #ccc;
 }
 
 #search_form input[type=submit]{
@@ -265,43 +339,18 @@ input[type="submit"].search {
     width:70%;
 }
 
-.edit_person input[type=submit]{
-    margin-left:-10px;
-   position:relative;
-   display:block;
-   float:left;
-   width:100%;
-   height:30px;
-   background-color:#E53868;
-   color:#fff;
-   margin:3px 3px;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
-}
 
-table#edit_person {
-  width:100%;
-}
-
-#edit_person input[type=text] {
-  width:100%;
-  height:20px;
-}
-
-#edit_person td {
-  min-width:100px;
-}
 
 #member_ad {
-  background-color:#E53868;
-  color:#fff;
-  padding:4px 0px 3px 0px;
-  width:100%;
-  height:18px;
-  text-align:center;
-  position:relative;
-  float:left;
-  font-size:12px;
+    background-color:#E53868;
+    color:#fff;
+    padding:4px 0px 3px 0px;
+    width:100%;
+    height:18px;
+    text-align:center;
+    position:relative;
+    float:left;
+    font-size:12px;
 
 }
 #member_ad a {
@@ -314,17 +363,17 @@ table#edit_person {
 }
 
 .person_title a {
-  font-size:15px;
-  font-weight:bold;
-  padding-top:5px;
-  line-height:20px;
-  color:#333;
+    font-size:15px;
+    font-weight:bold;
+    padding-top:5px;
+    line-height:20px;
+    color:#333;
 }
 
 .person_content a {
-  font-size:14px;
-  color:#333;
+    font-size:14px;
+    color:#333;
 
-/*  line-height:22px;*/
+    /*  line-height:22px;*/
 }
 
