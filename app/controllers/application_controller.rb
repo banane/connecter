@@ -9,10 +9,14 @@ class ApplicationController < ActionController::Base
   def verify_token
 
     if params[:auth_token].present?
-      @current_user = Person.find_by_authentication_token(params[:auth_token])
+     puts "token present"      
+     @current_user = Person.find_by_authentication_token(params[:auth_token])
       @current_user.present?
+      puts "User logged in: #{ @current_user.email } "
+      return true      
     else
-      false
+      raise "No authenticated user found."
+      return false
     end
   end
 end
