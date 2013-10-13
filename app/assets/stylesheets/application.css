@@ -176,7 +176,7 @@ a:visited {
     color:black;
 }
 
-.follow_button, .edit_button, .pic_edit_button, input[type="submit"], .done_button {
+.follow_button, .edit_button, .pic_edit_button, input[type=submit], .done_button {
     background-color:#aaa;
     color:white;
     font-weight:bold;
@@ -207,7 +207,7 @@ a.button:visited {
     width:200px;
 }
 
-input[type="submit"].follow, input[type="submit"].unfollow {
+input[type=submit].follow, input[type=submit].unfollow {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border: 1px solid #CCC;
@@ -219,18 +219,18 @@ input[type="submit"].follow, input[type="submit"].unfollow {
     font-weight:normal;
 
 }
-input[type="submit"].unfollow {
+input[type=submit].unfollow {
     background-color: #E53868;
     background: #E53868 url('star_yellow.png') no-repeat 2px 3px;
 
 }
 
-input[type="submit"].follow {
+input[type=submit].follow {
     background: #fff url('star_grey.png') no-repeat 2px 3px;
     color:#333;
 }
 
-input[type="submit"]{
+input[type=submit]{
     text-transform:uppercase;
     background-color: #aaa;
     color: white;
@@ -239,9 +239,8 @@ input[type="submit"]{
     margin-right:5px;
     align: right;
     float: right;
-
 }
-input[type="submit"].search {
+input[type=submit].search {
     margin-top:2px;
 }
 
