@@ -9,8 +9,7 @@ class Person < ActiveRecord::Base
 #  before_save :ensure_authentication_token
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :company,
-  :keywords, :looking_for, :location
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :company, :keywords, :looking_for, :location, :profile_photo
 
   has_many :followed_people
   has_many :people, :through => :followed_people

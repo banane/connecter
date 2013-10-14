@@ -260,9 +260,7 @@ input[type=submit].search {
     margin-top:-10px;
 }
 
-#profile_detail img {              /* viewing detail */
-    width:100%;
-}
+#profile_detail
 
 #profile_subhead {
     height:22px;
@@ -288,6 +286,7 @@ input[type=submit].search {
     top:0px;
     left:0px;
     height:300px;
+    width:100%;
 }
 #person_detail_imagebox form {
     position:absolute;
@@ -300,8 +299,9 @@ input[type=submit].search {
     padding-left:3px;
 }
 
-#profile_detail_left {
-    width:18%;
+#profile_detail_left img {
+    width:22;
+
     position:relative;
     float:left;
     height:22px;
@@ -341,12 +341,17 @@ input[type=submit].search {
   padding:4px 10px;
 }
 
-#search_form input[type=submit]{
+#search_form input[type=image]{
     margin-top:0px;
+    vertical-align:bottom;
+    width:30px;
+    height:30px;
+    padding:4px 4px 3px 5px;
 }
 #search_form input[type=text]{
     width:60%;
     background-color:#fff;
+    padding: 4px 10px 13px 4px;
 }
 #search_tagline {
   padding:4px 10px;

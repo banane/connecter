@@ -1,7 +1,7 @@
 <div id="profile_detail">
     <div id="profile_subhead">
         <%= link_to(api_v1_people_path(:auth_token => @current_user.authentication_token)) do %>
-           <div id="profile_detail_left"><div id="arrow"><</div></div>
+           <div id="profile_detail_left"><%= image_tag("backicon.png") %></div>
         <% end %>
         <div id="profile_detail_right"><%= @person.first_name%> <%= @person.last_name%></div>
     </div>
