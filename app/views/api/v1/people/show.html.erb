@@ -1,56 +1,60 @@
-<div id="profile_detail">
-    <div id="profile_subhead">
-        <%= link_to(api_v1_people_path(:auth_token => @current_user.authentication_token)) do %>
-           <div id="profile_detail_left"><%= image_tag("backicon.png") %></div>
-        <% end %>
-        <div id="profile_detail_right"><%= @person.first_name%> <%= @person.last_name%></div>
-    </div>
-    <% if @person.profile_photo.present? %>
-       <div id="person_detail_imagebox">
-            <%= image_tag @person.profile_photo %>
+<div id="profile_detail_view">
+        <%= link_to(api_v1_people_path(:auth_token => @current_user.authentication_token), :id => "profile_detail_left") do %>
+               X
+            <% end %>
+        <% if @person.profile_photo.present? %>
+           <div id="person_detail_imagebox">
+                <%= image_tag @person.profile_photo %>
+                <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
+           </div>
+
+        <% else %>
+            <div id="person_detail_follow">
             <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
-       </div>
+            </div>
+        <% end %>
+        <div id="person_info">
+          <% if @person.first_name.present? and @person.last_name.present? %>
+            <p>
+                <b>Name:</b> <%= @person.first_name %> <%= @person.last_name %>
+            </p>
+          <% end %>
 
-    <% else %>
-        <div id="person_detail_follow">
-        <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
+            <% if @person.role.present? %>
+                <p>
+                  <b>Role:</b> <%= @person.role %>
+                </p>
+            <% end %>
+          <% if @person.company.present? %>
+            <p>
+              <b>Company:</b> <%= @person.company %>
+            </p>
+          <% end %>
+          <% if @person.location.present? %>
+              <p>
+                <b>Location:</b> <%= @person.location %>
+              </p>
+          <% end %>
+          <% if @person.looking_for.present? %>
+              <p>
+                <b>Looking For:</b>
+                <%= @person.looking_for %>
+              </p>
+          <% end %>
+
+          <% if @person.keywords.present? %>
+              <p>
+                <b>Personal Keywords:</b>
+                <%= @person.keywords %>
+                </p>
+          <% end %>
+
+
         </div>
-    <% end %>
-    <div id="person_info">
-      <p>
-        <b>First name:</b> <%= @person.first_name %>
-      </p>
-        <p>
-          <b>Last name:</b> <%= @person.last_name %>
-        </p>
-
-        <p>
-          <b>Role:</b> <%= @person.role %>
-        </p>
-
-        <p>
-          <b>Company:</b> <%= @person.company %>
-        </p>
-
-      <p>
-        <b>Location:</b> <%= @person.location %>
-      </p>
-
-      <p>
-        <b>Looking For:</b>
-        <%= @person.looking_for %>
-      </p>
-
-      <p>
-        <b>Personal Keywords:</b>
-        <%= @person.keywords %>
-        </p>
-
-
+      <div class="center_button">
+        <% if @person.contact_permission? %>
+            <%= mail_to @person.email, "Contact", :id=>"mail_to_link" %>
+        <% end %>
+      </div>
     </div>
-  <div class="center_button">
-    <% if @person.contact_permission? %>
-        <%= mail_to @person.email, "Contact", :id=>"mail_to_link" %>
-    <% end %>
-  </div>
 </div>
