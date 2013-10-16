@@ -365,14 +365,14 @@ a#profile_detail_left {
   padding:4px 10px;
 }
 
-#search_form input[type=image]{
+#search input[type=image]{
     margin-top:0px;
     vertical-align:bottom;
     width:30px;
     height:30px;
     padding:4px 4px 3px 5px;
 }
-#search_form input[type=text]{
+#search input[type=text]{
     width:60%;
     background-color:#fff;
     padding: 4px 10px 13px 4px;

@@ -26,10 +26,12 @@ module Api
 
       def update
         Person.update(params[:id], params[:person])
+
         @person = Person.find(params[:id])
         flash[:notice] = "Profile successfully updated" if @person.valid?
         respond_with(@person) do |format|
           format.html { redirect_to edit_api_v1_person_path(:id => @person.id, :auth_token => @person.authentication_token) }
+          format.json { render inline: @person.to_json }
         end
       end
 

@@ -5,7 +5,6 @@ module Api
       respond_to :json, :html
 
       def index
-
       end
 
       def create
@@ -14,9 +13,12 @@ module Api
 
       protected
       def search(options)
+
         Sunspot.search(Person) do
-          keywords options[:query]
-          paginate :page => options[:page]
+
+         # keywords options[:query]
+          fulltext options[:query]
+        #  paginate :page => options[:page]
         end
       end
     end

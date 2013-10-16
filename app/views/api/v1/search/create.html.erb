@@ -1,7 +1,11 @@
+<%=  render :partial => "api/v1/shared/search", :locals => {:current_user => @current_user } %>
+
 <table width="100%" style="align:center;" id="attending">
   <% @search.results.each do |person| %>
-      <%=  render partial: "api/v1/shared/people_list", :locals => { :person => person,
-      :current_user => @current_user } %>
+      <% if person.attending? %>
+          <%=  render partial: "api/v1/shared/people_list", :locals => { :person => person,
+          :current_user => @current_user } %>
+      <% end %>
   <% end %>
 </table>
 

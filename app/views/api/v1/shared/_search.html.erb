@@ -1,0 +1,7 @@
+<div id="search">
+  <%= form_tag :action=>"create", :controller => "api/v1/search" do %>
+      <%= text_field_tag :query, params[:query] %>
+      <%= image_submit_tag("searchicon.png") %>
+      <%= hidden_field_tag :auth_token, @current_user.authentication_token %>
+  <% end %>
+</div>

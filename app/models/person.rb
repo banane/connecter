@@ -21,7 +21,8 @@ class Person < ActiveRecord::Base
   scope :attending, -> { where(:attending => 1).includes(:followed_people)}
 
   searchable do
-    text :keywords, :company, :role, :last_name, :email
+    text :keywords
+    text :first_name
   end
 
   def is_following person_id
@@ -35,7 +36,5 @@ class Person < ActiveRecord::Base
       "placeholder.png"
     end
   end
-
-
 
 end
