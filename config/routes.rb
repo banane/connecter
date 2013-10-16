@@ -15,7 +15,11 @@ Women2::Application.routes.draw do
         end
       end
 
-      resources :logins
+      resources :logins do
+        collection do
+          get :event_info
+        end
+      end
 
       resources :search do
         post :create
