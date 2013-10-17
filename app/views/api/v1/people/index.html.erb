@@ -1,5 +1,5 @@
 <%= render :partial => "api/v1/shared/subhead", :locals => { :page => @page } %>
-<div id="member_ad"><a href="http://women2.com/membership/">LEARN MORE ABOUT MEMBERSHIP PERKS ></a></div>
+<div id="member_ad"><a href="<%= MEMBERSHIP_LINK %>">LEARN MORE ABOUT MEMBERSHIP PERKS ></a></div>
 <table width="100%" style="align:center;border-spacing:0px;" class="people_list">
 <% @people.each do |person| %>
     <%= render partial: "api/v1/shared/people_list", :locals => { :person => person,

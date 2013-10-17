@@ -90,23 +90,26 @@ table#attending {
 
 
 #edit_profile h1 {
-  font-size:14px;
+  font-size:16px;
   line-height:16px;
   padding-bottom:0px;
-  margin-bottom:0px;
+
+  margin-bottom:12px;
 }
 
 #edit_profile #head_info {
     float:left;
     position:relative;
-    font-size:12px;
+    font-size:14px;
     width:70%;
     height:65px;
 }
 #edit_profile img {
-    height:60px;
-    width:60px;
-    padding-right:5px;
+    height:80px;
+    width:80px;
+    margin-top:7px;
+    margin-bottom:7px;
+    padding-right:7px;
     padding-left:4px;
     float:left;
     position:relative;
@@ -116,18 +119,19 @@ table#attending {
   height:65px;
 }
 
-#edit_profile #note {
-    width:100%;
-    display:block;
-    position:relative;
-    float:left;
-    font-style:italic;
-    font-size:11px;
-    padding-left:4px;
+#edit_person td {
+  font-size:14px;
 }
 
+#event_link {
+    width:100%;
+    position:relative;
+    float:left;
+    text-align:center;
+}
+
+
 .edit_person input[type=submit]{
-    margin-left:-10px;
     position:relative;
     display:block;
     float:left;
@@ -135,7 +139,7 @@ table#attending {
     height:30px;
     background-color:#E53868;
     color:#fff;
-    margin:3px 3px;
+    margin:0px 4px 7px 4px;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
 }

@@ -8,6 +8,7 @@ module Api
       before_filter :verify_token
       respond_to :json, :html
 
+
       def index
         @people = Person.attending.reject{ |p| p.id.eql?(@current_user.id) } # only have current user in controller
         @page = :attending
