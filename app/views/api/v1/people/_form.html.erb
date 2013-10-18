@@ -12,9 +12,10 @@
   <% end %>
 
     <table class="save_button" >
-    <tr><td width="15%"></td><td><%= f.submit "Save" %></td><td width="15%"></td></table>
+    <tr><td width="15%"></td><td><%= f.submit "UPDATE" %></td><td width="15%"></td></table>
     <table id="edit_person">
-    <tr><td>
+    <tr>
+        <td>
         <%= f.label :first_name %><br />
         <%= f.text_field :first_name %>
        </td>
@@ -55,5 +56,5 @@
       </table>
       <%= hidden_field_tag :auth_token, @person.authentication_token %>
     <table class="save_button" >
-      <tr><td width="15%"></td><td><%= f.submit "Save" %></td><td width="15%"></td></table>
+      <tr><td width="15%"></td><td><%= f.submit "UPDATE" %></td><td width="15%"></td></table>
 <% end %>
