@@ -23,6 +23,10 @@ class Person < ActiveRecord::Base
   searchable do
     text :keywords
     text :first_name
+    text :last_name
+    text :role
+    text :company
+    text :location
   end
 
   def is_following person_id
