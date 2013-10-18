@@ -9,16 +9,16 @@ class Person < ActiveRecord::Base
 #  before_save :ensure_authentication_token
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :company, :keywords, :looking_for, :location, :profile_photo
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :company, :keywords, :looking_for, :location, :profile_photo, :attending, :member, :contact_permission
 
   has_many :followed_people
-  has_many :people, :through => :followed_people
-  has_many :inverse_followed_people, :class_name => "FollowedPeople", :foreign_key => "person_id"
-  has_many :inverse_followed_people, :through => :inverse_followed_people, :source => :person
+#  has_many :people, :through => :followed_people
+#  has_many :inverse_followed_people, :class_name => "FollowedPeople", :foreign_key => "person_id"
+#  has_many :inverse_followed_people, :through => :inverse_followed_people, :source => :person
 
   validates_presence_of :email
 
-  scope :attending, -> { where(:attending => 1).includes(:followed_people)}
+  scope :all_attending, -> { where(:attending => 1).includes(:followed_people)}
 
   searchable do
     text :keywords

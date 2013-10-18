@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131012011003) do
+ActiveRecord::Schema.define(:version => 20131018004008) do
 
   create_table "followed_people", :force => true do |t|
     t.integer  "person_id"
@@ -21,17 +21,17 @@ ActiveRecord::Schema.define(:version => 20131012011003) do
   end
 
   create_table "people", :force => true do |t|
+    t.string   "email",                  :default => "",    :null => false
     t.string   "first_name",             :default => ""
     t.string   "last_name",              :default => ""
+    t.string   "profile_photo"
     t.string   "role",                   :default => ""
     t.string   "company",                :default => ""
+    t.string   "location"
     t.boolean  "member",                 :default => false
     t.boolean  "attending",              :default => false
-    t.string   "email",                  :default => "",    :null => false
     t.text     "keywords"
-    t.string   "location"
     t.text     "looking_for"
-    t.string   "profile_photo"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_password",     :default => "",    :null => false
@@ -65,5 +65,3 @@ ActiveRecord::Schema.define(:version => 20131012011003) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
 end
-
-sample = Person.new(:email=>"test@banane.com", :password => "111111111", :password_confirmation=>"111111111")

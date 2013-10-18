@@ -10,7 +10,7 @@ module Api
 
 
       def index
-        @people = Person.attending.reject{ |p| p.id.eql?(@current_user.id) } # only have current user in controller
+        @people = Person.all_attending.reject{ |p| p.id.eql?(@current_user.id) } # only have current user in controller
         @page = :attending
 
         respond_with @people
