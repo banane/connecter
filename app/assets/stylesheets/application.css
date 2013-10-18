@@ -256,6 +256,21 @@ input[type=submit].follow {
     color:#333;
 }
 
+input[type=submit].close_link{
+    width:30px;
+    padding:3px;
+    color:#fff;
+    background-color:#000;
+    float:left;
+    height:30px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    font-size: 24px;
+    padding-left: 11px;
+}
+
 input[type=submit]{
     text-transform:uppercase;
     background-color: #aaa;

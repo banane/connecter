@@ -1,0 +1,8 @@
+<div class="attending_row">
+
+  <div class="person_title"><%=  person.first_name + " " +  person.last_name %></div>
+  <div class="person_content">
+    <%= person.company unless !person.present? %>
+    <%= person.role unless person.role.present? %>
+  </div>
+</div>

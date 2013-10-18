@@ -9,6 +9,7 @@ module Api
 
       def create
          @search = search(params)
+         @query = params[:query]
       end
 
       protected
