@@ -33,6 +33,10 @@ class Person < ActiveRecord::Base
     self.authentication_token.present? ? true : false
   end
 
+  def is_me? current_user
+    self.id.eql?(current_user.id)
+  end
+
   def ok_to_contact?
     has_logged_in? && self.contact_permission.eql?(true)
   end
