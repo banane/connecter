@@ -2,25 +2,22 @@
    <% unless @person.is_me?(@current_user) %>
         <% if @from_view.present?  # from search result path  %>
             <% if @from_view.eql?("search") %>
-              <%=  button_to "X", "/api/v1/search?auth_token=#{@current_user.authentication_token}&query=#{@query}",
+              <%=  button_to "<", "/api/v1/search?auth_token=#{@current_user.authentication_token}&query=#{@query}",
               :method => :post, :class=>"close_link" %>
             <% end %>
         <% else %>
-            <%= link_to(api_v1_people_path(:auth_token => @current_user.authentication_token), :id => "profile_detail_left") do %>X<% end %>
+            <%= link_to(api_v1_people_path(:auth_token => @current_user.authentication_token), :id => "profile_detail_left") do %><<% end %>
         <% end %>
      <% end %>
         <% if @person.profile_photo.present? %>
            <div id="person_detail_imagebox">
                 <%= image_tag @person.profile_photo %>
-             <% unless @person.is_me?(@current_user) %>
-
                    <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
-               <% end %>
            </div>
 
         <% else %>
           <% unless @person.is_me?(@current_user) %>
-
+   
                 <div id="person_detail_follow">
                     <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
                 </div>

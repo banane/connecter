@@ -29,6 +29,8 @@ class Person < ActiveRecord::Base
     text :location
   end
 
+
+
   def has_logged_in?
     self.authentication_token.present? ? true : false
   end
