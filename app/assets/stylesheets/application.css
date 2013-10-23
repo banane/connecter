@@ -404,21 +404,24 @@ a#profile_detail_left {
 /**********************             search view */
 #search {
   margin-top:-10px;
-  background-color:#E6E6E6;
-  padding:4px 10px;
+  background-color:#E53868;
+  padding:4px 0px 4px 0px;
+  text-align:center;
 }
 
 #search input[type=image]{
     margin-top:0px;
     vertical-align:bottom;
-    width:30px;
-    height:30px;
-    padding:4px 4px 3px 5px;
+    width:15px ;
+    margin:13px 13px 13px 0px;
+    float:right;
+    position:relative;
 }
 #search input[type=text]{
-    width:60%;
-    background-color:#fff;
-    padding: 4px 10px 13px 4px;
+    width:85%;
+    padding: 4px 0px 13px 0px;
+
+
 }
 #search_tagline {
   padding:4px 10px;
