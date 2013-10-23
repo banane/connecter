@@ -9,7 +9,7 @@ class Person < ActiveRecord::Base
 #  before_save :ensure_authentication_token
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :company, :keywords, :looking_for, :location, :profile_photo, :attending, :member, :contact_permission
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :company, :keywords, :looking_for, :location, :profile_photo, :attending, :member, :contact_permission, :authentication_token
 
   has_many :followed_people
 #  has_many :people, :through => :followed_people
@@ -27,6 +27,14 @@ class Person < ActiveRecord::Base
     text :role
     text :company
     text :location
+  end
+
+  def has_logged_in?
+    self.authentication_token.present? ? true : false
+  end
+
+  def ok_to_contact?
+    has_logged_in? && self.contact_permission.eql?(true)
   end
 
   def is_following person_id

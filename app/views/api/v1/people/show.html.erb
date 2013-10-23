@@ -57,7 +57,7 @@
 
         </div>
       <div class="center_button">
-        <% if @person.contact_permission? %>
+        <% if @person.ok_to_contact? %>
             <%= mail_to @person.email, "Contact", :id=>"mail_to_link" %>
         <% end %>
       </div>
