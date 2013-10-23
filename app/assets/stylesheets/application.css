@@ -349,6 +349,12 @@ input[type=submit].search {
     padding-left:3px;
 }
 
+input[type=submit].close_link {
+    background: #000000 url('backicon.png') no-repeat 0px 0px;
+    width:30px;
+    height:30px;
+}
+
 a#profile_detail_left {
 
     position: absolute;

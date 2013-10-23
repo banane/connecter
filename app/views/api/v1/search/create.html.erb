@@ -6,7 +6,7 @@
 
     <table width="100%" style="align:center;" id="attending">
       <% @search.results.each do |person| %>
-          <% if person.attending? %>
+          <% if person.attending? && !person.is_me?(@current_user) %>
               <%=  render partial: "api/v1/shared/people_list", :locals => { :person => person,
               :current_user => @current_user } %>
           <% end %>

@@ -2,9 +2,7 @@
    <% unless @person.is_me?(@current_user) %>
         <% if @from_view.present?  # from search result path  %>
             <% if @from_view.eql?("search") %>
-              <%=  button_to image_tag("backicon.png"), "/api/v1/search?auth_token=#{@current_user
-              .authentication_token}&query=#{@query}",
-              :method => :post, :class=>"close_link" %>
+              <%=  button_to "","/api/v1/search?auth_token=#{@current_user.authentication_token}&query=#{@query}", :method => :post, :class=>"close_link" %>
             <% end %>
         <% else %>
             <%= link_to image_tag("backicon.png"), api_v1_people_path(:auth_token => @current_user.authentication_token), :id => "profile_detail_left"  %>
