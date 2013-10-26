@@ -1,10 +1,8 @@
 <%= render :partial => "api/v1/shared/subhead", :locals => { :page => @page } %>
 <table width="100%" style="align:center;border-spacing:0px;" class="people_list">
   <% @follows.each do |followship| %>
-    <% if followship.followed_person.attending %>
-        <%= render partial: "api/v1/shared/people_list", :locals => { :person => followship.followed_person, :current_user => @current_user } %>
+        <%= render partial: "api/v1/shared/people_list", :locals => { :person => followship.followed_person, :current_user => @current_user, :page => @page } %>
     <% end %>
-  <% end %>
   </tr>
 </table>
 
