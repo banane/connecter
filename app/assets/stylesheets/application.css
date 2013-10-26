@@ -198,6 +198,7 @@ table.people_list td {
     float:left;
     height:54px;
     color:#333;
+    width:90%;
 }
 
 .attending_pic {
@@ -263,7 +264,8 @@ input[type=submit].follow, input[type=submit].unfollow {
     text-transform:none;
     font-weight:normal;
     margin-top:15px;
-    float:right;
+    position:absolute;
+    right:13px;
 
 }
 #profile_detail_view input[type=submit].follow,  #profile_detail_view input[type=submit].unfollow {
