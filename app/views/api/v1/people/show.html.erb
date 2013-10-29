@@ -16,7 +16,6 @@
 
         <% else %>
           <% unless @person.is_me?(@current_user) %>
-
                 <div id="person_detail_follow">
                     <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
                 </div>
