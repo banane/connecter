@@ -18,12 +18,13 @@ module Api
 
       def show
         @person = Person.find(params[:id])
+        @page = :show
 
         if params[:from_view]
           @from_view = params[:from_view]
           @query = params[:query]
         end
-        respond_with @person, @from_view, @query
+        respond_with @person, @from_view, @query, @page
       end
 
       def create
