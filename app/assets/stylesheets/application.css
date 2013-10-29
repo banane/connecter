@@ -270,6 +270,8 @@ input[type=submit].follow, input[type=submit].unfollow {
 }
 #profile_detail_view input[type=submit].follow,  #profile_detail_view input[type=submit].unfollow {
     border:none;
+    position:absolute;
+    top:-48px;
 }
 
 
@@ -370,7 +372,9 @@ a#profile_detail_left {
 }
 
 #profile_detail_view {
-    margin-top:-10px;
+    /*margin-top:-10px;*/
+    margin-top:23px;
+    position:relative;
 }
 
 
