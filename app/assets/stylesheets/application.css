@@ -6,8 +6,8 @@
     width:100%;
     margin-top:-10px;
     background-color:#e6e6e6;
+    height:46px;
     padding-bottom:16px;
-    height:27px;
 }
 
 #subhead a.selected {
@@ -22,11 +22,11 @@
     float:left;
     /* width:79px;*/
     width:29.5%;
-    height:27px;
+    height:30px;
     border-right:1px solid #b6b6b6;
     padding-right:7px;
     padding-bottom:0px;
-    padding-top:15px;
+    padding-top:31px;
     padding-left:3px;
     font-weight:bold;
     font-size:14px;
