@@ -52,54 +52,11 @@ RailsAdmin.config do |config|
 
 
 
-  ###  FollowedPerson  ###
-
-  # config.model 'FollowedPerson' do
-
-  #   # You can copy this to a 'rails_admin do ... end' block inside your followed_person.rb model definition
-
-  #   # Found associations:
-
-  #     configure :person, :belongs_to_association 
-  #     configure :followed_person, :belongs_to_association 
-
-  #   # Found columns:
-
-  #     configure :id, :integer 
-  #     configure :person_id, :integer         # Hidden 
-  #     configure :followed_person_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-
-  #   # Cross-section configuration:
-
-  #     # object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
-  #     # label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
-  #     # label_plural 'My models'      # Same, plural
-  #     # weight 0                      # Navigation priority. Bigger is higher.
-  #     # parent OtherModel             # Set parent model for navigation. MyModel will be nested below. OtherModel will be on first position of the dropdown
-  #     # navigation_label              # Sets dropdown entry's name in navigation. Only for parents!
-
-  #   # Section specific configuration:
-
-  #     list do
-  #       # filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
-  #       # items_per_page 100    # Override default_items_per_page
-  #       # sort_by :id           # Sort column (default is primary key)
-  #       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
-  #     end
-  #     show do; end
-  #     edit do; end
-  #     export do; end
-  #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
-  #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
-  #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
 
 
   ###  Person  ###
 
-  # config.model 'Person' do
+   config.model 'Person' do
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your person.rb model definition
 
@@ -110,31 +67,31 @@ RailsAdmin.config do |config|
   #   # Found columns:
 
   #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :first_name, :string 
-  #     configure :last_name, :string 
-  #     configure :profile_photo, :string 
-  #     configure :role, :string 
-  #     configure :company, :string 
-  #     configure :location, :string 
-  #     configure :member, :boolean 
-  #     configure :attending, :boolean 
-  #     configure :keywords, :text 
-  #     configure :looking_for, :text 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :authentication_token, :string 
-  #     configure :contact_permission, :boolean 
+       configure :email, :string
+       configure :first_name, :string
+       configure :last_name, :string
+       configure :profile_photo, :string
+       configure :role, :string
+       configure :company, :string
+       configure :location, :string
+       configure :member, :boolean
+       configure :attending, :boolean
+       configure :keywords, :text
+       configure :looking_for, :text
+       configure :created_at, :datetime do visible false end
+       configure :updated_at, :datetime do visible false end
+       configure :password, :password         # Hidden
+       configure :password_confirmation, :password         # Hidden
+       configure :reset_password_token, :string   do visible false end      # Hidden
+       configure :reset_password_sent_at, :datetime do visible false end
+       configure :remember_created_at, :datetime do visible false end
+       configure :sign_in_count, :integer do visible false end
+       configure :current_sign_in_at, :datetime do visible false end
+       configure :last_sign_in_at, :datetime do visible false end
+       configure :current_sign_in_ip, :string do visible false end
+       configure :last_sign_in_ip, :string do visible false end
+       configure :authentication_token, :string do visible false end
+       configure :contact_permission, :boolean
 
   #   # Cross-section configuration:
 
@@ -159,6 +116,6 @@ RailsAdmin.config do |config|
   #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
+   end
 
 end
