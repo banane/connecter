@@ -1,35 +1,20 @@
 <tr>
   <td>
-
       <div class="attending_pic">
-
-        <% if current_page?(controller:"search") %>
           <%= link_to image_tag(person.get_image), api_v1_person_path(person,
                                                                       :auth_token=>current_user.authentication_token,
-                                                                       :query => @query, :from_view => :search
+                                                                       :query => @query, :from_view => @from_view
                                                                       ) %>
-        <% else %>
-              <%= link_to image_tag(person.get_image), api_v1_person_path(person,
-                                                                   :auth_token=>current_user.authentication_token)
-                                                                   %>
-         <% end %>
       </div>
-    <% if current_page?(controller:"search") %>
         <%= link_to api_v1_person_path(person,
                                        :auth_token=>current_user.authentication_token,
-                                       :query => @query, :from_view => :search
+                                       :query => @query, :from_view => @from_view
                     ) do %>
 
             <%= render :partial => "api/v1/shared/attending_row", :locals => { :person => person,:current_user => current_user } %>
          <% end %>
-    <% else %>
-        <%= link_to api_v1_person_path(person, :auth_token=>current_user.authentication_token) do %>
-            <%= render :partial => "api/v1/shared/attending_row", :locals => { :person => person,
-            :current_user => current_user } %>
-        <% end %>
-    <% end %>
 
-     <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => person, :current_user => current_user } %>
+     <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => person, :current_user => current_user, :from_view => @from_view } %>
    </td>
  </tr>
 

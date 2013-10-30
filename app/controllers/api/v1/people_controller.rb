@@ -12,6 +12,7 @@ module Api
       def index
         @people = Person.all_attending.reject{ |p| p.id.eql?(@current_user.id) } # only have current user in controller
         @page = :attending
+        @from_view = "attending"
 
         respond_with @people
       end
@@ -19,6 +20,7 @@ module Api
       def show
         @person = Person.find(params[:id])
         @page = :show
+        debugger
 
         if params[:from_view]
           @from_view = params[:from_view]
@@ -26,6 +28,7 @@ module Api
         end
         respond_with @person, @from_view, @query, @page
       end
+
 
       def create
         respond_with Person.create(params[:person])

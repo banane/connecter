@@ -47,13 +47,15 @@ class Api::V1::FollowedPeopleController < ApplicationController
   end
 
   def index
-    @page = :following
+    @page = :following # deprecated
+    @from_view = "following"
     @follows = FollowedPerson.includes(:person).where('people.attending=1 and followed_people.person_id = ?',
     @current_user.id).uniq
   end
 
   def follows_me
-    @page = :followers
+    @page = :followers # deprecated
+    @from_view = "followers"
     @followsme = FollowedPerson.where(:followed_person_id => @current_user.id).includes(:person)
   end
 end

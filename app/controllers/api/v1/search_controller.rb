@@ -9,12 +9,14 @@ module Api
 
       def create
          @page = "search"
+         @from_view = "search"
          @search = search(params)
          @query = params[:query]
       end
 
       def return_create
         @page = "search"
+        @from_view = "search"
         @search = search(params)
         @query = params[:query]
        render "create"
