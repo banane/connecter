@@ -6,8 +6,10 @@ class Api::V1::FollowedPeopleController < ApplicationController
     :followed_person_id => params[:person_id])
     if @followship.save
 
-      flash[:notice] = "Followed."
-      if params[:from_view].eql?("following")
+      if params[:follow_page_return].eql?("show")
+        redirect_to api_v1_person_path(:id => params[:person_id],  :auth_token=>@current_user.authentication_token,
+        :from_view => params[:from_view] )
+      elsif params[:from_view].eql?("following")
         redirect_to api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)
       elsif params[:from_view].eql?("followers")
         redirect_to follows_me_api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)
@@ -32,7 +34,10 @@ class Api::V1::FollowedPeopleController < ApplicationController
     @followship.destroy
     flash[:notice] = "No longer following."
 
-    if params[:from_view].eql?("following")
+    if params[:follow_page_return].eql?("show")
+      redirect_to api_v1_person_path(:id => followed_person.id,  :auth_token=>@current_user.authentication_token,
+                                     :from_view => params[:from_view] )
+    elsif params[:from_view].eql?("following")
       redirect_to api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)
     elsif params[:from_view].eql?("followers")
       redirect_to follows_me_api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)

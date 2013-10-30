@@ -19,7 +19,8 @@ module Api
 
       def show
         @person = Person.find(params[:id])
-        @page = :show
+        @page = "show"
+        @follow_page_return = "show"
 
         if params[:from_view]
           @from_view = params[:from_view]

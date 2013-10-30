@@ -16,13 +16,13 @@
         <% if @person.profile_photo.present? %>
            <div id="person_detail_imagebox">
                 <%= image_tag @person.profile_photo %>
-                   <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
+                   <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user, :from_view => @from_view, :follow_page_return => @follow_page_return } %>
            </div>
 
         <% else %>
           <% unless @person.is_me?(@current_user) %>
                 <div id="person_detail_follow">
-                    <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user } %>
+                    <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user, :from_view => @from_view, :follow_page_return => @follow_page_return } %>
                 </div>
           <% end %>
         <% end %>

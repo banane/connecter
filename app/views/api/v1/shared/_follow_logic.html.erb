@@ -6,12 +6,14 @@
                                    :action => 'destroy', :id => relationship.id,
                                    :auth_token=>current_user.authentication_token,
                                    :query => @query,
-                                   :from_view => @page
+                                   :from_view => @from_view,
+                                   :follow_page_return => @follow_page_return
         }, :method => :delete, :class=>"unfollow" %>
     <% else %>
         <%=  button_to "Follow", api_v1_followed_people_path(:person_id => person,
                                                              :auth_token=>current_user.authentication_token,
-                                                             :from_view => @page,
+                                                             :from_view => @from_view,
+                                                             :follow_page_return => @follow_page_return,
                                                              :query => @query),
                                                              :method => :post, :class=>"follow" %>
     <% end %>
