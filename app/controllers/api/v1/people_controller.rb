@@ -20,7 +20,6 @@ module Api
       def show
         @person = Person.find(params[:id])
         @page = :show
-        debugger
 
         if params[:from_view]
           @from_view = params[:from_view]

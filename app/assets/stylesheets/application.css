@@ -269,12 +269,12 @@ input[type=submit].follow, input[type=submit].unfollow {
 
 }
 #profile_detail_view input[type=submit].follow,  #profile_detail_view input[type=submit].unfollow {
-    border:none;
     position:absolute;
 }
 
 #person_detail_imagebox input[type=submit].follow, #person_detail_imagebox input[type=submit].unfollow {
     top:-48px;
+    border:none;
 }
 
 
