@@ -5,6 +5,7 @@ class Api::V1::FollowedPeopleController < ApplicationController
     @followship = @current_user.followed_people.build(:person_id => @current_user.id,
     :followed_person_id => params[:person_id])
     if @followship.save
+
       flash[:notice] = "Followed."
       if params[:from_view].eql?("following")
         redirect_to api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)
@@ -12,6 +13,10 @@ class Api::V1::FollowedPeopleController < ApplicationController
         redirect_to follows_me_api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)
       elsif params[:from_view].eql?("show")
         redirect_to api_v1_person_path(:id => params[:person_id],  :auth_token=>@current_user.authentication_token)
+      elsif params[:from_view].eql?("search")
+        redirect_to return_create_api_v1_search_index_path(:query => params[:query],
+        :auth_token=>@current_user.authentication_token)
+#        redirect_to :back
       else
         redirect_to api_v1_people_path(:auth_token=>@current_user.authentication_token)
       end
@@ -33,6 +38,9 @@ class Api::V1::FollowedPeopleController < ApplicationController
       redirect_to follows_me_api_v1_followed_people_path(:auth_token=>@current_user.authentication_token)
     elsif params[:from_view].eql?("show")
       redirect_to api_v1_person_path(:id => followed_person.id,  :auth_token=>@current_user.authentication_token)
+    elsif params[:from_view].eql?("search")
+      redirect_to return_create_api_v1_search_index_path(:query => params[:query],
+                                                         :auth_token=>@current_user.authentication_token)
     else
       redirect_to api_v1_people_path(:auth_token=>@current_user.authentication_token)
     end

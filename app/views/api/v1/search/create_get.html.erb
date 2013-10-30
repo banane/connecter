@@ -1,0 +1,15 @@
+<%=  render :partial => "api/v1/shared/search", :locals => {:current_user => @current_user } %>
+
+<% if @search.results.empty? %>
+    <div style="padding:10px;"> No results, try another? </div>
+<% else %>
+
+    <table width="100%" style="align:center;" id="attending">
+      <% @search.results.each do |person| %>
+          <% if person.attending? && !person.is_me?(@current_user) %>
+              <%=  render partial: "api/v1/shared/people_list", :locals => { :person => person,
+                                                                             :current_user => @current_user } %>
+          <% end %>
+      <% end %>
+    </table>
+<% end %>

@@ -8,8 +8,16 @@ module Api
       end
 
       def create
+         @page = "search"
          @search = search(params)
          @query = params[:query]
+      end
+
+      def return_create
+        @page = "search"
+        @search = search(params)
+        @query = params[:query]
+       render "create"
       end
 
       protected
@@ -22,6 +30,7 @@ module Api
         #  paginate :page => options[:page]
         end
       end
+
     end
   end
 end

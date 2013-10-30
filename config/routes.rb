@@ -27,6 +27,9 @@ Women2::Application.routes.draw do
       resources :search do
         post :create
         get :index
+        collection do
+          get :return_create
+        end
       end
 
     end
