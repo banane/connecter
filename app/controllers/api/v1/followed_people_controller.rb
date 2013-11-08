@@ -55,12 +55,12 @@ class Api::V1::FollowedPeopleController < ApplicationController
     @page = :following # deprecated
     @from_view = "following"
     @follows = FollowedPerson.includes(:person).where('people.attending=1 and followed_people.person_id = ?',
-    @current_user.id).uniq
+    @current_user.id).order('followed_people.created_at DESC').uniq
   end
 
   def follows_me
     @page = :followers # deprecated
     @from_view = "followers"
-    @followsme = FollowedPerson.where(:followed_person_id => @current_user.id).includes(:person)
+    @followsme = FollowedPerson.where('followed_people.followed_person_id = ? and people.attending = 1',@current_user.id).order('followed_people.created_at DESC').includes(:person).uniq
   end
 end
