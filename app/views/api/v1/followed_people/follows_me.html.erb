@@ -8,3 +8,10 @@
       <% end %>
     </table>
   <% end %>
+  <% if @followsme.empty? %>
+    <p style="margin:10px">Followers are attendees who'd like to like to connect with you.</p>
+    <p style="margin:10px">There are no 'Followers' at this time. Make sure your profile is complete to let other know
+    how to
+    connect with
+    you.</p>
+  <% end %>

@@ -5,6 +5,11 @@
     <% end %>
   </tr>
 </table>
+<% if @follows.empty? %>
+    <p style="margin:10px">You are not following anyone yet.</p>
+    <p style="margin:10px">Find attendees you would like to to connect with by selecting the 'Follow' button to add to your 'Following'
+    list.</p>
+<% end %>
 
 <br />
 
