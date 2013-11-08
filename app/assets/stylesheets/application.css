@@ -203,13 +203,17 @@ table.people_list td {
 
 .attending_pic {
     float:left;
-    position:relative;
     margin:-1px 8px -4px -1px;
+    width:60px;
+    height:60px;
+    overflow:hidden;
+    position:relative;
 }
 
 .attending_pic img {
-    max-width:60px;
-    max-height:60px;
+    width:60px;
+    position:absolute;
+    bottom:0px;
 }
 
 a:active {
