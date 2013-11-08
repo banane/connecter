@@ -1,4 +1,4 @@
-<div id="profile_detail_view">
+
    <% unless @person.is_me?(@current_user) %>
         <% if @from_view.present?  # from search result path  %>
             <% if @from_view.eql?("search") %>
@@ -13,20 +13,15 @@
         <% end %>
       <% end %>
      <% end %>
-        <% if @person.profile_photo.present? %>
-           <div id="person_detail_imagebox">
-                <%= image_tag @person.profile_photo %>
-                   <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user, :from_view => @from_view, :follow_page_return => @follow_page_return } %>
-           </div>
+   <div id="profile_detail_view">
+     <% if @person.profile_photo.present? %>
+       <div id="person_detail_imagebox"><%= image_tag @person.profile_photo %></div>
+     <% end %>
+     <% unless @person.is_me?(@current_user) %>
+        <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user, :from_view => @from_view, :follow_page_return => @follow_page_return } %>
 
-        <% else %>
-          <% unless @person.is_me?(@current_user) %>
-                <div id="person_detail_follow">
-                    <%= render :partial => "api/v1/shared/follow_logic", :locals => { :person => @person, :current_user => @current_user, :from_view => @from_view, :follow_page_return => @follow_page_return } %>
-                </div>
-          <% end %>
-        <% end %>
-        <div id="person_info">
+     <% end %>
+     <div id="person_info">
           <% if @person.first_name.present? and @person.last_name.present? %>
             <p>
                 <b>Name:</b> <%= @person.first_name %> <%= @person.last_name %>

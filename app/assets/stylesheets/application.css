@@ -273,7 +273,7 @@ input[type=submit].follow, input[type=submit].unfollow {
 
 }
 #profile_detail_view input[type=submit].follow,  #profile_detail_view input[type=submit].unfollow {
-    position:absolute;
+   margin-top:-48px;
 }
 
 #person_detail_imagebox input[type=submit].follow, #person_detail_imagebox input[type=submit].unfollow {
@@ -339,21 +339,16 @@ input[type=submit].search {
 #person_detail_imagebox {
     width:100%;
     position:relative;
-    height:300px;
 }
 #person_detail_imagebox img {
-    position:absolute;
+
     z-index:1;
-    top:0px;
-    left:0px;
   /*  height:300px;*/
     width:100%;
 }
-#person_detail_imagebox form {
-    position:absolute;
-    bottom:10px;
-    right:10px;
+#person_detail_view form {
     z-index:10;
+    margin-top:-39px;
 }
 
 #person_info {
@@ -372,6 +367,7 @@ a#profile_detail_left {
     left: 0px;
     top: 0px;
     z-index: 10;
+    margin-top:20px;
 }
 
 #profile_detail_left img {
@@ -380,7 +376,7 @@ a#profile_detail_left {
 
 #profile_detail_view {
     /*margin-top:-10px;*/
-    margin-top:23px;
+    margin-top:49px;
     position:relative;
 }
 
