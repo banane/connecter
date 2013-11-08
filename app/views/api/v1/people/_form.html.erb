@@ -10,51 +10,43 @@
       </ul>
     </div>
   <% end %>
-
-    <table class="save_button" >
-    <tr><td width="15%"></td><td><%= f.submit "UPDATE" %></td><td width="15%"></td></table>
-    <table id="edit_person">
-    <tr>
-        <td>
-        <%= f.label :first_name %><br />
+    <%= f.submit "UPDATE", :style=>"width:100%;margin-bottom:-12px;" %>
+    <br />
+        <%= f.label :first_name %>
         <%= f.text_field :first_name %>
-       </td>
-    </tr>
-    <tr>
-        <td><%= f.label :last_name %><br />
-        <%= f.text_field :last_name %></td>
-    </tr>
-    <tr>
-        <td><%= f.label :role %><br />
-        <%= f.text_field :role %></td>
-    </tr>
-    <tr>
-      <td><%= f.label :company %><br />
-      <%= f.text_field :company %></td>
-     </tr>
-    <tr>
-      <td><%= f.label :location %><br />
-      <%= f.text_field :location %></td>
-    </tr>
-      <tr>
-          <td><%= f.label :keywords, "Keywords that describe you (i.e. CEO, e-commerce, startup" %>
-         <br />
-          <%= f.text_field :keywords %></td>
-      </tr>
-      <tr>
-          <td><%= f.label :looking_for, "I want to meet (i.e., designers, marketers, CEOs, investors)"
-          %><br /><%= f.text_field :looking_for %></td>
-      </tr>
-      <tr>
-          <td><%= f.label :email %><br /><%= f.text_field :email %></td>
-      </tr>
-      <tr>
+    <br />
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+    <br />
 
-      <td><%= f.check_box :contact_permission, :style=>"padding-top:3px;" %> <%= f.label :contact_permission,
-      "Let attendees contact me" %>
-      </tr>
-      </table>
+        <%= f.label :role %>
+        <%= f.text_field :role %>
+    <br />
+
+      <%= f.label :company %>
+      <%= f.text_field :company %>
+    <br />
+
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    <br />
+
+       <%= f.label :keywords, "Keywords that describe you (i.e. CEO, e-commerce, startup" %>
+          <%= f.text_field :keywords %>
+    <br />
+
+       <%= f.label :looking_for, "I want to meet (i.e., designers, marketers, CEOs, investors)"   %>
+       <%= f.text_field :looking_for %>
+
+       <%= f.label :email %><%= f.text_field :email %>
+       <br />
+       <br />
+
+      <%= f.check_box :contact_permission, :style=>"padding-top:3px;" %> <%= f.label :contact_permission,
+      "Let attendees contact me", :class=>"inline_checkbox" %>
+
+      <br />
       <%= hidden_field_tag :auth_token, @person.authentication_token %>
-    <table class="save_button" >
-      <tr><td width="15%"></td><td><%= f.submit "UPDATE" %></td><td width="15%"></td></table>
+    <%= f.submit "UPDATE" %>
+
 <% end %>

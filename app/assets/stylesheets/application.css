@@ -91,18 +91,11 @@ table#attending {
 
 #edit_profile h1 {
   font-size:16px;
-  line-height:16px;
-  padding-bottom:0px;
-
-  margin-bottom:12px;
+  padding-top:5px;
 }
 
 #edit_profile #head_info {
-    float:left;
-    position:relative;
-    font-size:11px;
-    width:60%;
-    height:65px;
+   margin-top:15px;
 }
 #edit_profile img {
     height:80px;
@@ -116,25 +109,24 @@ table#attending {
 }
 
 #edit_profile #head {
-  height:65px;
+  height:90px;
+  display:block;
+  margin-right:34px;
+  margin-left:26px;
 }
 
-#edit_person td {
+#edit_person  {
   font-size:14px;
+  line-height:13px;
 }
 
-#edit_person td label {
-  padding-top:4px;
-  font-size:13px;
-  line-height:20px;
-}
 
 #event_link {
     width:100%;
     position:relative;
     float:left;
     text-align:center;
-    margin-top:30px;
+    margin-top:15px;
     margin-bottom:30px;
     padding:4px 7px 4px 7px;
     background-color: #575757;
@@ -142,10 +134,13 @@ table#attending {
     color:#fff;
 }
 
-table.save_button {
-    position:relative;
-    float:left;
-    width:100%;
+#edit_profile label {
+    display:block;
+    line-height:20px;
+    padding-top:10px;
+}
+#edit_profile label.inline_checkbox {
+  display:inline;
 }
 
 .edit_person input[type=submit]{
@@ -170,22 +165,17 @@ table.save_button {
 
 }
 
-table#edit_person {
-    width:100%;
-}
 
-#edit_person input[type=text] {
-    width:95%;
-    height:40px;
+#edit_profile input[type=text] {
+    width:98%;
+    height:20px;
     font-size:15px;
+    line-height:14px;
 }
 
-#edit_person td {
-    min-width:100px;
-}
 
 #edit_profile form {
-  margin-right:10px; /* for some reason spilling into gutter on mobile devices */
+  margin:10px 42px 0px 30px;
 }
 
 /**********************             people list styles */
