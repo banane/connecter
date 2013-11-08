@@ -182,6 +182,10 @@ table#edit_person {
     min-width:100px;
 }
 
+#edit_profile form {
+  margin-right:10px; /* for some reason spilling into gutter on mobile devices */
+}
+
 /**********************             people list styles */
 
 table.people_list {
