@@ -42,8 +42,7 @@
        <br />
        <br />
 
-      <%= f.check_box :contact_permission, :style=>"padding-top:3px;" %> <%= f.label :contact_permission,
-      "Let attendees contact me", :class=>"inline_checkbox" %>
+      <%= f.check_box :contact_permission, :style=>"padding-top:3px;margin-bottom:10px;" %> <%= f.label :contact_permission, "Let attendees contact me", :class=>"inline_checkbox" %>
 
       <br />
       <%= hidden_field_tag :auth_token, @person.authentication_token %>

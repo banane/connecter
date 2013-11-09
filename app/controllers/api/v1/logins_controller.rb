@@ -8,8 +8,10 @@ module Api
       end
 
       def event_info
+        link = "https://w2-lv-conference-2013.eventbrite.com/"
         respond_to do |format|
-          format.json { render :json => { :link =>  "https://w2-lv-conference-2013.eventbrite.com/" } }
+          format.json { render :json => { :link =>  link } }
+          format.html { redirect_to link }
         end
       end
     end

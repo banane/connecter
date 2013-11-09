@@ -165,6 +165,13 @@ table#attending {
 
 }
 
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding:0px;
+    padding-left:2px;
+}
+
 
 #edit_profile input[type=text] {
     width:98%;
