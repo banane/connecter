@@ -62,8 +62,7 @@
       <div class="center_button">
         <% if @person.ok_to_contact? && !@person.is_me?(@current_user) %>
             <%= mail_to @person.email, "Contact", :id=>"mail_to_link", :subject => "Request to Connect From Women2
-            .0 Connector App", :body=>'\n----\nSent from Women2.0 Connector app. Check it out here: https://t
-            .co/YgauYyavt6' %>
+            .0 Connector App", :body=>'\n----\nSent from Women2.0 Connector app. Check it out here: \nhttp://www.women2.com/mobile' %>
         <% end %>
       </div>
      <div style="display:block;margin-bottom:30px;color:#ffffff;height:80px;">&nbps;</div>
