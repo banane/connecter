@@ -18,7 +18,8 @@ class Person < ActiveRecord::Base
 
   validates_presence_of :email
 
-  scope :all_attending, -> { where(:attending => 1).includes(:followed_people).order("last_sign_in_at DESC")}
+#  scope :all_attending, -> { where(:attending => 1).includes(:followed_people).order("last_sign_in_at DESC")}
+  scope :all_attending, -> { where(:attending => 1).includes(:followed_people).order("profile_photo DESC, RAND()")}
 
   searchable do
     text :keywords
